@@ -1,3 +1,6 @@
+#ifdef CONFIG_LETV_CAMERA_60
+#include <mach/msm_camera_sdk_letv_60.h>
+#else
 #ifndef __UAPI_LINUX_MSM_CAMSENSOR_SDK_H
 #define __UAPI_LINUX_MSM_CAMSENSOR_SDK_H
 
@@ -382,4 +385,5 @@ struct msm_camera_i2c_reg_setting_array {
 	unsigned short delay;
 };
 
+#endif
 #endif

@@ -10,6 +10,10 @@
  * GNU General Public License for more details.
  *
  */
+#ifdef CONFIG_LETV_CAMERA_60
+#include <mach/msm_camera_letv_60.h>
+#else
+
 #ifndef __UAPI_MSM_CAMERA_H
 #define __UAPI_MSM_CAMERA_H
 
@@ -2221,4 +2225,5 @@ struct msm_ver_num_info {
 	((handle & 0x80) ? (handle & 0x7F) : 0xFF)
 #define SET_VIDEO_INST_IDX(handle, data)	\
 	(handle |= (0x1 << 7) | (data & 0x7F))
+#endif
 #endif

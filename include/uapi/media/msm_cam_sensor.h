@@ -1,3 +1,7 @@
+#ifdef CONFIG_LETV_CAMERA_60
+#include <mach/msm_cam_sensor_letv_60.h>
+#else
+
 #ifndef __UAPI_LINUX_MSM_CAM_SENSOR_H
 #define __UAPI_LINUX_MSM_CAM_SENSOR_H
 
@@ -562,3 +566,4 @@ struct sensor_init_cfg_data {
 
 #endif
 
+#endif

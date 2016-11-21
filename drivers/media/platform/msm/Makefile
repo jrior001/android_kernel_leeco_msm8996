@@ -5,4 +5,9 @@
 obj-$(CONFIG_MSM_VIDC_V4L2) += vidc/
 obj-y += broadcast/
 obj-$(CONFIG_DVB_MPQ) += dvb/
-obj-$(CONFIG_MSMB_CAMERA) += camera_v2/
+ifeq ($CONFIG_LETV_CAMERA_60),y)
+obj-(CONFIG_MSMB_CAMERA += camera_v2_letv/
+endif
+ifeq ($CONFIG_MSMB_CAMERA_DEFAULT),y)
+obj-(CONFIG_MSMB_CAMERA += camera_v2/
+endif
