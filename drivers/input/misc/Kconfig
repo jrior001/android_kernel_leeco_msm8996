@@ -746,4 +746,14 @@ config INPUT_DRV2667_HAPTICS
 	  To compile this driver as a module, choose M here: the
 	  module will be called drv260x-haptics.
 
+config INPUT_DRV2604L_HAPTICS
+	tristate "TI DRV260X haptics support"
+	depends on I2C && GPIOLIB
+	select REGMAP_I2C
+	help
+	  Say Y to enable support for the TI DRV260X haptics driver.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called drv260x-haptics.
+
 endif
