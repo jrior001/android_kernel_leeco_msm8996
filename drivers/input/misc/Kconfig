@@ -756,4 +756,13 @@ config INPUT_DRV2604L_HAPTICS
 	  To compile this driver as a module, choose M here: the
 	  module will be called drv260x-haptics.
 
+config STMVL53L0
+	tristate "STM VL53L0 ToF sensor"
+	depends on I2C
+	select REGMAP_I2C
+	help
+	  Say Y to enable support for the STM VL53L0 ToF sensor.
+
+	  To compile this driver as a module, choose M here
+
 endif
