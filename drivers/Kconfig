@@ -200,4 +200,7 @@ source "drivers/bif/Kconfig"
 
 source "drivers/gud/Kconfig"
 
+# Zeusis debug feature
+source "drivers/zes_util/Kconfig"
+
 endmenu
