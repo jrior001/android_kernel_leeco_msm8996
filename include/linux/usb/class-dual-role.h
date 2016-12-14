@@ -112,6 +112,7 @@ extern void *dual_role_get_drvdata(struct dual_role_phy_instance *dual_role);
 static inline void dual_role_instance_changed(struct dual_role_phy_instance
 				       *dual_role){}
 static inline struct dual_role_phy_instance *__must_check
+
 devm_dual_role_instance_register(struct device *parent,
 				 const struct dual_role_phy_desc *desc)
 {
@@ -122,7 +123,6 @@ static inline void devm_dual_role_instance_unregister(struct device *dev,
 					       *dual_role){}
 static inline void *dual_role_get_drvdata(struct dual_role_phy_instance
 		*dual_role)
-{
 	return ERR_PTR(-ENOSYS);
 }
 #endif /* CONFIG_DUAL_ROLE_USB_INTF */

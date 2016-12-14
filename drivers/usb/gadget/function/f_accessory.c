@@ -460,7 +460,7 @@ static struct hid_ll_driver acc_hid_ll_driver = {
 	.stop = acc_hid_stop,
 	.open = acc_hid_open,
 	.close = acc_hid_close,
-	.raw_request = acc_hid_raw_request,
+        .raw_request = acc_hid_raw_request,
 };
 
 static struct acc_hid_dev *acc_hid_new(struct acc_dev *dev,

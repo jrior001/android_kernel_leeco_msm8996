@@ -44,9 +44,29 @@ config MSMB_CAMERA_DEBUG
 	---help---
 	  Enable printk() debug for msm camera 2.0
 
+choice
+        prompt "Camera stack variant"
+        depends on MSMB_CAMERA && MACH_LEECO
+        default MSMB_CAMERA_DEFAULT
+
+config MSMB_CAMERA_DEFAULT
+	bool "Default Qualcomm camera stack"
+
+config LETV_CAMERA
+	bool "LETV's variant of the camera stack"
+	---help---
+	  Enable the older M-based LETV camera code
+
+endchoice
+
 if MSMB_CAMERA
+if MSMB_CAMERA_DEFAULT
 source "drivers/media/platform/msm/camera_v2/Kconfig"
-endif # MSMB_CAMERA
+endif # if MSMB_CAMERA_DEFAULT
+if LETV_CAMERA
+source "drivers/media/platform/msm/camera_v2_letv/Kconfig"
+endif
+endif
 source "drivers/media/platform/msm/dvb/Kconfig"
 source "drivers/media/platform/msm/broadcast/Kconfig"
 source "drivers/media/platform/msm/sde/Kconfig"
