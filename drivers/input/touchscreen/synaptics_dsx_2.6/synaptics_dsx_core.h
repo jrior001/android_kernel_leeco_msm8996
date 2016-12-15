@@ -39,6 +39,11 @@
 #define SYNAPTICS_DSX_DRIVER_PRODUCT (SYNAPTICS_DS4 | SYNAPTICS_DS5)
 #define SYNAPTICS_DSX_DRIVER_VERSION 0x2061
 
+#ifdef CONFIG_MACH_ZL1
+#define OPEN_CHARGE_BIT
+#define ESD_CHECK_SUPPORT
+#endif
+
 #include <linux/version.h>
 #ifdef CONFIG_FB
 #include <linux/notifier.h>

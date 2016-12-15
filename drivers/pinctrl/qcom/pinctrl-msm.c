@@ -74,6 +74,22 @@ struct msm_pinctrl {
 
 static struct msm_pinctrl *msm_pinctrl_data;
 
+static bool skip(const char* p_name){
+#ifdef CONFIG_MACH_ZL1
+	char skip_string[16][8] = {"gpio0", "gpio1", "gpio2", "gpio3", "gpio81", "gpio82" , "gpio83", "gpio84", "gpio130", "gpio131"};
+	int i = 0;
+	if(NULL != p_name){
+		for(i = 0 ; i < 10 ; ){
+			if(!strcmp(p_name, skip_string[i])){
+				return true;
+			}
+			i++;
+		}
+	}
+#endif
+	return false;
+}
+
 static inline struct msm_pinctrl *to_msm_pinctrl(struct gpio_chip *gc)
 {
 	return container_of(gc, struct msm_pinctrl, chip);
